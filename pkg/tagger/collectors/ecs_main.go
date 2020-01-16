@@ -63,11 +63,11 @@ func (c *ECSCollector) Fetch(entity string) ([]string, []string, []string, error
 		return nil, nil, nil, nil
 	}
 
-	tasks_list, err := c.ecsUtil.GetTasks()
+	tasksList, err := c.ecsUtil.GetTasks()
 	if err != nil {
 		return []string{}, []string{}, []string{}, err
 	}
-	updates, err := c.parseTasks(tasks_list, cID)
+	updates, err := c.parseTasks(tasksList, cID)
 	if err != nil {
 		return []string{}, []string{}, []string{}, err
 	}

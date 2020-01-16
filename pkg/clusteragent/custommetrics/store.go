@@ -277,9 +277,9 @@ func setStoreStats(store *configMapStore) {
 	var valid, invalid float64
 	for _, metric := range bundle.External {
 		if metric.Valid {
-			valid += 1
+			valid++
 		} else {
-			invalid += 1
+			invalid++
 		}
 	}
 	externalTotal.With(prometheus.Labels{"valid": "true"}).Set(valid)
